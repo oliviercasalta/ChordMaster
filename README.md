@@ -19,4 +19,4 @@ Further developments could bring ChordMaster to another level, such as MIDI file
 
 ## License
 
-No License required# ChordMaster
+No License required
