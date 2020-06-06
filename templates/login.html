@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block header %}
+<style>
+        .carouselfix{
+        color:white;
+        text-align: center;
+        font-size:xx-large;
+        font-style: italic;
+        border: 2px;
+        }
+
+        .carousel1, .carousel2, .carousel3{
+        display: flex;
+        height:180px;
+        align-items:center;
+        justify-content:center;
+        position: relative;
+        text-align: center;
+        color: white;
+        }
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+    <!-- Carousel -->
+    <div class="carouselfix">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#section1">
+                        <div class="carousel1"><img src="static/guitar.jpeg" style="width: 100%;" alt="no"></div>
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="#section2">
+                        <div class="carousel2"><img src="static/saxo.jpeg" style="width: 100%;" alt="no"></div>
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="#section3">
+                        <div class="carousel3"><img src="static/bass.jpeg" style="width: 100%;" alt="no"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+
+            <table style="width:100%;">
+                <colgroup>
+                    <col span="1" style="width: 50%;">
+                    <col span="1" style="width: 50%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td align="right">
+                            <div class="form-group" style="width:70%;">
+                                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+                            </div>
+                        </td>
+                        <td align="center" rowspan="2">
+                            <h1><i class="fas fa-play"></i></h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <div class="form-group" style="width:70%">
+                                <input class="form-control" name="password" placeholder="Password" type="password">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <button class="btn btn-primary" type="submit">Log In</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    All Songs
+{% endblock %}
+
+{% block main %}
+
+    <form action="/" method="post">
+    <table id="table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Song</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in song_list %}
+            <tr>
+                <td style="width:25%">{{ row.order }}</td>
+                <td style="width:50%"><button class="btn btn-primary" type ="submit" name="text" value = "{{ row.song_name }}" onclick="myFunction()"><i class="fas fa-music"> {{ row.song_name }}</button></td>
+                <td style="width:25%">{{ row.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready( function() {
+            $("#table tr").click(function() {
+               var x = document.getElementsByName("text");
+               $.post(
+                  "/index.html",
+                  { text: text }
+               ).done(function (reply) {
+                  $('#reply').empty().append(reply);
+               });
+            });
+        });
+    </script>
+    </form>
+
+{% endblock %}
