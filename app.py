@@ -22,7 +22,7 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Connecting to GCloud SQL database "tab"
-engine = create_engine('mysql+pymysql://root:root@127.0.0.1/tab')
+engine = create_engine('mysql+pymysql://xxx:xxx@127.0.0.1/tab')
 
 # Defining metadata woth SQLAlchemy
 metadata = MetaData()
