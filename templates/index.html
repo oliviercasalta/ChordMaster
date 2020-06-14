@@ -10,7 +10,6 @@
     <table id="table" class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
                 <th>Song</th>
                 <th>Created</th>
             </tr>
@@ -18,9 +17,8 @@
         <tbody>
             {% for row in song_list %}
             <tr>
-                <td style="width:25%">{{ row.order }}</td>
-                <td style="width:50%"><button class="btn btn-primary" type ="submit" name="text" value = "{{ row.song_name }}" onclick="myFunction()"><i class="fas fa-music"> {{ row.song_name }}</button></td>
-                <td style="width:25%">{{ row.time }}</td>
+                <td style="width:70%"><button class="btn btn-primary" type ="submit" name="text" value = "{{ row.song_name }}" onclick="myFunction()"><i class="fas fa-music"> {{ row.song_name }}</button></td>
+                <td style="width:30%">{{ row.time }}</td>
             </tr>
             {% endfor %}
         </tbody>
